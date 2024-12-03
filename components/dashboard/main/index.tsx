@@ -1,18 +1,15 @@
 /*eslint-disable*/
 'use client';
 
-import MainDashboardTable from '@/components/dashboard/main/cards/MainDashboardTable';
 import Statistics from '@/components/dashboard/main/cards/Statistics';
 import StatisticsRed from '@/components/dashboard/main/cards/StatisticsRed';
 import MacroMapComponent from '@/components/charts/MacroMap';
 import InfoCardComponent from '@/components/charts/InfoCard';
 import InfoCardDetail from '@/components/charts/InfoCardDetail';
-import AreaChartComponent from '@/components/charts/AreaChart';
-import BarChartComponent from '@/components/charts/BarChart';
+import InfoCardIncidentDetailViewComponent from '@/components/charts/InfoCardIncidentDetailView';
 import DashboardLayout from '@/components/layout';
 import { Button } from '@/components/ui/button';
 import { Database } from '@/types/types_db';
-import tableDataUserReports from '@/variables/tableDataUserReports';
 import { User } from '@supabase/supabase-js';
 import {
   HiChartBar,
@@ -21,6 +18,7 @@ import {
   HiOutlineCurrencyDollar
 } from 'react-icons/hi2';
 import Link from 'next/link';
+import InfoCardIncidentDetailComponent from '@/components/charts/InfoCardIncidentDetail';
 
 type Subscription = Database['public']['Tables']['subscriptions']['Row'];
 type Product = Database['public']['Tables']['products']['Row'];
@@ -114,6 +112,11 @@ export default function Settings(props: Props) {
         <div className="h-full w-full rounded-md ">
           {/* <MainDashboardTable tableData={tableDataUserReports} /> */}
           <MacroMapComponent />
+        </div>
+        <div className="mb-5 flex gap-5 flex-col xl:flex-row">
+          {/* <BarChartComponent /> */}
+          <InfoCardIncidentDetailComponent />
+          <InfoCardIncidentDetailViewComponent />
         </div>
       </div>
     </DashboardLayout>
