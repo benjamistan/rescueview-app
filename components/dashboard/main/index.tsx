@@ -4,6 +4,7 @@
 import MainDashboardTable from '@/components/dashboard/main/cards/MainDashboardTable';
 import Statistics from '@/components/dashboard/main/cards/Statistics';
 import StatisticsRed from '@/components/dashboard/main/cards/StatisticsRed';
+import MacroMapComponent from '@/components/charts/MacroMap';
 import AreaChartComponent from '@/components/charts/AreaChart';
 import BarChartComponent from '@/components/charts/BarChart';
 import DashboardLayout from '@/components/layout';
@@ -103,7 +104,7 @@ export default function Settings(props: Props) {
           />
         </div>
         <div className="mb-5 flex gap-5 flex-col xl:flex-row">
-          <AreaChartComponent />
+          <MacroMapComponent />
           {/* <BarChartComponent /> */}
         </div>
 
