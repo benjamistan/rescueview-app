@@ -32,48 +32,55 @@ function InfoCardDetailComponent() {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <ul className="space-y-4">
-          {data.map((item, index) => (
-            <li
-              key={index}
-              className="flex flex-col gap-2 border-zinc-200 p-4 text-start dark:border-zinc-800"
+        {data.map((item, index) => (
+          <div
+            key={index}
+            className="grid grid-cols-2 gap-y-4 text-sm text-start"
+          >
+            <div className="font-medium text-zinc-600 dark:text-zinc-400">
+              Resource:
+            </div>
+            <div>{item.resource || 'N/A'}</div>
+
+            <div className="font-medium text-zinc-600 dark:text-zinc-400">
+              Type:
+            </div>
+            <div>{item.type}</div>
+
+            <div className="font-medium text-zinc-600 dark:text-zinc-400">
+              Status:
+            </div>
+            <div
+              className={`font-bold ${
+                item.status === 'Available' ? 'text-green-500' : 'text-red-500'
+              }`}
             >
-              <div className="text-start">
-                <strong>Resource:</strong> {item.resource || 'N/A'}
-              </div>
-              <div className="text-start">
-                <strong>Type:</strong> {item.type}
-              </div>
-              <div className="text-start">
-                <strong>Status:</strong>{' '}
-                <span
-                  className={`font-bold ${
-                    item.status === 'Available'
-                      ? 'text-green-500'
-                      : 'text-red-500'
-                  }`}
-                >
-                  {item.status}
-                </span>
-              </div>
-              <div className="text-start">
-                <strong>Team Size:</strong> {item.teamSize || 'N/A'}
-              </div>
-              <div className="text-start">
-                <strong>Parent Resource:</strong> {item.parentResource || 'N/A'}
-              </div>
-              <div className="text-start">
-                <strong>Location:</strong>{' '}
-                <a
-                  href="/dashboard/main"
-                  className="text-blue-500 underline hover:text-blue-700"
-                >
-                  {item.location}
-                </a>
-              </div>
-            </li>
-          ))}
-        </ul>
+              {item.status}
+            </div>
+
+            <div className="font-medium text-zinc-600 dark:text-zinc-400">
+              Team Size:
+            </div>
+            <div>{item.teamSize || 'N/A'}</div>
+
+            <div className="font-medium text-zinc-600 dark:text-zinc-400">
+              Parent Resource:
+            </div>
+            <div>{item.parentResource || 'N/A'}</div>
+
+            <div className="font-medium text-zinc-600 dark:text-zinc-400">
+              Location:
+            </div>
+            <div>
+              <a
+                href="/dashboard/main"
+                className="text-blue-500 underline hover:text-blue-700"
+              >
+                {item.location}
+              </a>
+            </div>
+          </div>
+        ))}
       </CardContent>
     </Card>
   );
