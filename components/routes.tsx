@@ -2,12 +2,11 @@
 import { IRoute } from '@/types/types';
 import {
   HiOutlineCog8Tooth,
-  HiOutlineCpuChip,
-  HiOutlineCreditCard,
-  HiOutlineCurrencyDollar,
-  HiOutlineDocumentText,
+  HiPaperAirplane,
   HiOutlineHome,
-  HiOutlineUsers
+  HiOutlineUsers,
+  HiOutlineLifebuoy,
+  HiMiniMapPin
 } from 'react-icons/hi2';
 
 export const routes: IRoute[] = [
@@ -18,31 +17,31 @@ export const routes: IRoute[] = [
     collapse: false
   },
   {
-    name: 'AI Pages',
-    path: '/ai-pages',
+    name: 'Active Missions',
+    path: '/dashboard/main',
     icon: (
-      <HiOutlineCpuChip className="-mt-[7px] h-4 w-4 stroke-2 text-inherit" />
+      <HiOutlineLifebuoy className="-mt-[7px] h-4 w-4 stroke-2 text-inherit" />
     ),
     collapse: true,
     items: [
       {
-        name: 'AI Generator',
-        path: '/dashboard/ai-generator',
+        name: 'Valencia - Flood',
+        path: '/dashboard/main',
         collapse: false
       },
       {
-        name: 'AI Assistant',
-        path: '/dashboard/ai-assistant',
+        name: 'New Orleans - Hurricane',
+        path: '/dashboard/main',
         collapse: false
       },
       {
-        name: 'AI Chat',
-        path: '/dashboard/ai-chat',
+        name: 'Borough Market - MTA',
+        path: '/dashboard/main',
         collapse: false
       },
       {
-        name: 'AI Text to Speech',
-        path: '/dashboard/ai-text-to-speech',
+        name: 'Bataclan - MTA',
+        path: '/dashboard/main',
         collapse: false
       }
     ]
@@ -66,7 +65,7 @@ export const routes: IRoute[] = [
   //  collapse: false,
   // },
   {
-    name: 'Users List',
+    name: 'Misson Planning',
     path: '/dashboard/users-list',
     icon: (
       <HiOutlineUsers className="-mt-[7px] h-4 w-4 stroke-2 text-inherit" />
@@ -74,7 +73,7 @@ export const routes: IRoute[] = [
     collapse: false
   },
   {
-    name: 'Profile Settings',
+    name: 'Analytics & Reports',
     path: '/dashboard/settings',
     icon: (
       <HiOutlineCog8Tooth className="-mt-[7px] h-4 w-4 stroke-2 text-inherit" />
@@ -82,26 +81,24 @@ export const routes: IRoute[] = [
     collapse: false
   },
   {
-    name: 'Subscription',
+    name: 'Drone Fleet Management',
     path: '/dashboard/subscription',
     icon: (
-      <HiOutlineCreditCard className="-mt-[7px] h-4 w-4 stroke-2 text-inherit" />
+      <HiPaperAirplane className="-mt-[7px] h-4 w-4 stroke-2 text-inherit" />
     ),
     collapse: false
   },
   {
-    name: 'Landing Page',
+    name: 'Maps & Terrain',
     path: '/home',
-    icon: (
-      <HiOutlineDocumentText className="-mt-[7px] h-4 w-4 stroke-2 text-inherit" />
-    ),
+    icon: <HiMiniMapPin className="-mt-[7px] h-4 w-4 stroke-2 text-inherit" />,
     collapse: false
   },
   {
-    name: 'Pricing Page',
+    name: 'Resource Requests',
     path: '/pricing',
     icon: (
-      <HiOutlineCurrencyDollar className="-mt-[7px] h-4 w-4 stroke-2 text-inherit" />
+      <HiOutlineUsers className="-mt-[7px] h-4 w-4 stroke-2 text-inherit" />
     ),
     collapse: false
   }

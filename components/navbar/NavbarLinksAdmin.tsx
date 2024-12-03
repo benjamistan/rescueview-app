@@ -111,12 +111,8 @@ export default function HeaderLinks() {
 
       <Link className="w-full" href="/dashboard/settings">
         <Avatar className="h-9 min-w-9 md:min-h-10 md:min-w-10">
-          <AvatarImage src={user?.user_metadata.avatar_url} />
-          <AvatarFallback className="font-bold">
-            {user?.user_metadata.full_name
-              ? `${user?.user_metadata.full_name[0]}`
-              : `${user?.email[0].toUpperCase()}`}
-          </AvatarFallback>
+          <AvatarImage src="/img/firefighter.jpeg" />
+          {/* <AvatarFallback className="font-bold">{'John Smith'}</AvatarFallback> */}
         </Avatar>
       </Link>
     </div>

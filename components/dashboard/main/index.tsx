@@ -3,6 +3,7 @@
 
 import MainDashboardTable from '@/components/dashboard/main/cards/MainDashboardTable';
 import Statistics from '@/components/dashboard/main/cards/Statistics';
+import StatisticsRed from '@/components/dashboard/main/cards/StatisticsRed';
 import AreaChartComponent from '@/components/charts/AreaChart';
 import BarChartComponent from '@/components/charts/BarChart';
 import DashboardLayout from '@/components/layout';
@@ -51,15 +52,15 @@ export default function Settings(props: Props) {
       <div className="h-full w-full">
         <div className="mb-5 grid w-full grid-cols-1 gap-5 rounded-md md:grid-cols-2 xl:grid-cols-4">
           {/* statistics */}
-          <Statistics
+          <StatisticsRed
             icon={
-              <div className="flex h-14 w-14 items-center justify-center rounded-full border border-zinc-200 text-4xl dark:border-zinc-800 text-foreground dark:text-white">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full border border-zinc-200 text-4xl dark:border-zinc-800 text-white text-foreground dark:text-white">
                 <HiChartBar className="h-5 w-5" />
               </div>
             }
-            title="Total Credits Used"
-            value="46,823"
-            info="+20.4% from last month"
+            title="Situation Status"
+            value="Red"
+            info="Life at risk"
           />
           <Statistics
             icon={
@@ -67,9 +68,9 @@ export default function Settings(props: Props) {
                 <HiUsers className="h-5 w-5" />
               </div>
             }
-            title="Total Users"
-            value="67,284"
-            info="+12.3% from last month"
+            title="People Identified"
+            value="258"
+            info="in risk zone"
           />
           <Statistics
             icon={
@@ -77,8 +78,8 @@ export default function Settings(props: Props) {
                 <HiOutlineWallet className="h-5 w-5 stroke-2" />
               </div>
             }
-            title="Credits Available"
-            value="100,000"
+            title="Rescue Resources Available"
+            value="17"
             info=""
           />
           <Statistics
@@ -87,15 +88,15 @@ export default function Settings(props: Props) {
                 <HiOutlineCurrencyDollar className="h-5 w-5 stroke-2" />
               </div>
             }
-            title="Current Plan"
-            value="Expert+"
+            title="Command Level"
+            value="Strategic"
             endContent={
-              <Link href="/dashboard/subscription">
+              <Link href="/dashboard/main">
                 <Button
                   variant="outline"
-                  className="text-foreground dark:text-white"
+                  className="text-foreground dark:text-white bg-red-600 text-white hover:bg-red-700 hover:text-white"
                 >
-                  Manage
+                  Escalate
                 </Button>
               </Link>
             }
@@ -103,11 +104,11 @@ export default function Settings(props: Props) {
         </div>
         <div className="mb-5 flex gap-5 flex-col xl:flex-row">
           <AreaChartComponent />
-          <BarChartComponent />
+          {/* <BarChartComponent /> */}
         </div>
-        {/* Conversion and talbes*/}
+
         <div className="h-full w-full rounded-md ">
-          <MainDashboardTable tableData={tableDataUserReports} />
+          {/* <MainDashboardTable tableData={tableDataUserReports} /> */}
         </div>
       </div>
     </DashboardLayout>

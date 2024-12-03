@@ -120,33 +120,27 @@ function Sidebar(props: SidebarProps) {
             </div>
             {/* Free Horizon Card    */}
             <div className="mb-9 mt-7">
-              <div className="flex justify-center">
-                <SidebarCard handleCheckout={handleCheckout} />
-              </div>
               {/* Sidebar profile info */}
               <div className="mt-5 flex w-full items-center rounded-md border border-zinc-200 p-4 dark:border-zinc-800">
                 <Link href="/dashboard/settings">
                   <Avatar className="min-h-10 min-w-10">
-                    <AvatarImage src={user?.user_metadata.avatar_url} />
+                    <AvatarImage src="/img/firefighter.jpeg" />
                     <AvatarFallback className="font-bold dark:text-foreground">
-                      {/* {userDetails.full_name
+                      {/* 
+                      {userDetails.full_name
                         ? `${userDetails.full_name[0]}`
                         : `${user?.user_metadata.email[0].toUpperCase()}`} */}
+                      {'Rescue User'}
                     </AvatarFallback>
                   </Avatar>
                 </Link>
 
                 <Link href="/dashboard/settings">
                   <p className="ml-2 mr-2 w-max max-w-100% flex items-center text-sm font-semibold leading-none text-foreground dark:text-white">
-                    {user?.user_metadata.full_name
-                      ? user?.user_metadata.full_name
-                      : `User`}
+                    {'John Smith'}
                   </p>
                 </Link>
-                <form
-                  className="w-full"
-                  onSubmit={(e) => handleRequest(e, SignOut, router)}
-                >
+                <form className="w-full">
                   <input type="hidden" name="pathName" value={usePathname()} />
                   <Button
                     variant="outline"
