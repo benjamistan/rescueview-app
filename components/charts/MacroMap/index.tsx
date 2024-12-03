@@ -12,10 +12,12 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css'; // Import Leaflet CSS
 import { HiMapPin } from 'react-icons/hi2';
 
+let map;
+
 export default function MacroMapComponent() {
   useEffect(() => {
     // Ensure the map is initialized after the DOM element is present
-    const map = L.map('map').setView([39.436301, -0.391013], 12);
+    map = L.map('map').setView([39.436301, -0.391013], 12);
 
     // Add a tile layer (OpenStreetMap in this case)
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -23,7 +25,7 @@ export default function MacroMapComponent() {
     }).addTo(map);
 
     // Optional: Add a marker to the map
-    L.marker([51.505, -0.09]).addTo(map).bindPopup('Center Point').openPopup();
+    //L.marker([51.505, -0.09]).addTo(map).bindPopup('Center Point').openPopup();
   }, []); // Runs only once when the component mounts
 
   return (

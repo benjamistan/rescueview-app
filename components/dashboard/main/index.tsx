@@ -5,6 +5,8 @@ import MainDashboardTable from '@/components/dashboard/main/cards/MainDashboardT
 import Statistics from '@/components/dashboard/main/cards/Statistics';
 import StatisticsRed from '@/components/dashboard/main/cards/StatisticsRed';
 import MacroMapComponent from '@/components/charts/MacroMap';
+import InfoCardComponent from '@/components/charts/InfoCard';
+import InfoCardDetail from '@/components/charts/InfoCardDetail';
 import AreaChartComponent from '@/components/charts/AreaChart';
 import BarChartComponent from '@/components/charts/BarChart';
 import DashboardLayout from '@/components/layout';
@@ -90,12 +92,12 @@ export default function Settings(props: Props) {
               </div>
             }
             title="Command Level"
-            value="Strategic"
+            value="Gold"
             endContent={
               <Link href="/dashboard/main">
                 <Button
                   variant="outline"
-                  className="text-foreground dark:text-white bg-red-600 text-white hover:bg-red-700 hover:text-white"
+                  className="mt-10 text-foreground dark:text-white bg-red-600 text-white hover:bg-red-700 hover:text-white"
                 >
                   Escalate
                 </Button>
@@ -104,12 +106,14 @@ export default function Settings(props: Props) {
           />
         </div>
         <div className="mb-5 flex gap-5 flex-col xl:flex-row">
-          <MacroMapComponent />
           {/* <BarChartComponent /> */}
+          <InfoCardComponent />
+          <InfoCardDetail />
         </div>
 
         <div className="h-full w-full rounded-md ">
           {/* <MainDashboardTable tableData={tableDataUserReports} /> */}
+          <MacroMapComponent />
         </div>
       </div>
     </DashboardLayout>
